@@ -1,5 +1,5 @@
 ## Laravel + Angular + Bootstrap4 Seed project
-# Author: Epick362
+#### Author: Epick362
 
 ### Installation
 Project is assumed to run in a Homestead VMbox. Other installations may require additional configuration.
