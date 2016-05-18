@@ -1,11 +1,13 @@
 app.directive('astronautRow', function() {
-    var controller = ['$localStorage', function($localStorage) {
+    var controller = ['AstronautService', function(AstronautService) {
         var vm = this;
 
         vm.delete = function() {
             if (confirm('Are you sure you want to delete this record?')) {
-                var index = _.findIndex($localStorage.astronauts, {id: vm.astronaut.id});
-                $localStorage.astronauts.splice(index, 1);
+                AstronautService.destroy(vm.astronaut.id)
+                .then(function (data) {
+                    delete vm.astronaut;
+                });
             }
         }
     }];

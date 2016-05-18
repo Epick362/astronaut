@@ -14,10 +14,15 @@
         </thead>
         <tbody>
             <tr astronaut-create></tr>
-            <tr ng-if="al.$storage.astronauts.length == 0">
+            <tr ng-if="al.loading">
+                <td colspan="5" class="text-xs-center">
+                    <i class="fa fa-spinner fa-pulse"></i> Loading
+                </td>
+            </tr>
+            <tr ng-if="al.astronauts.length == 0">
                 <td colspan="5">No astronauts in database</td>
             </tr>
-            <tr astronaut-row ng-repeat="astronaut in al.$storage.astronauts" data="astronaut"></tr>
+            <tr astronaut-row ng-repeat="astronaut in al.astronauts" data="astronaut"></tr>
         </tbody>
     </table>
 </div>

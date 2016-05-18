@@ -1,12 +1,21 @@
 app.directive('astronautList', function() {
-    var controller = ['$localStorage', function($localStorage) {
+    var controller = ['AstronautService', function(AstronautService) {
         var vm = this;
 
-        $localStorage.$default({
-            astronauts: [],
-        });
+        vm.astronauts = [];
+        vm.loading = false;
 
-        vm.$storage = $localStorage;
+        vm.loadAstronauts = function() {
+            vm.loading = true;
+
+            AstronautService.get()
+            .then(function(data) {
+                vm.astronauts = data.data;
+                vm.loading = false;
+            })
+        }
+
+        vm.loadAstronauts();
     }];
 
     return {

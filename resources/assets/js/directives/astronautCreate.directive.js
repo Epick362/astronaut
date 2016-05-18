@@ -1,6 +1,8 @@
 app.directive('astronautCreate', function() {
-    var controller = ['$localStorage', 'toastr', function($localStorage, toastr) {
+    var controller = ['AstronautService', 'toastr', function(AstronautService, toastr) {
         var vm = this;
+
+        vm.loading = false;
 
         vm.create = function() {
             if (!vm.astronaut || vm.astronaut.fname == "" || vm.astronaut.lname == "" || vm.astronaut.power == "") {
@@ -8,9 +10,16 @@ app.directive('astronautCreate', function() {
                 return;
             }
 
-            $localStorage.astronauts.unshift(vm.astronaut);
+            vm.loading = true;
 
-            delete vm.astronaut;
+            AstronautService.store(vm.astronaut)
+            .then(function(data) {
+                vm.loading = false;
+                toastr.success('Record added');
+            })
+            .catch(function() {
+                toastr.error('API Error');
+            });
         }
 
         vm.today = new Date(); // for max

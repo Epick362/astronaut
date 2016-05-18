@@ -12,13 +12,5 @@
 */
 
 Route::group(['prefix' => 'api'], function () {
-    Route::group(['middleware' => 'jwt.auth'], function() {
-        Route::get('ping', function() {
-            return 'authenticated';
-        });
-    });
-
-    Route::post('authenticate', 'AuthenticateController@authenticate');
-    Route::post('signup', 'AuthenticateController@signup');
-    Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
+    Route::resource('astronauts', 'AstronautController');
 });

@@ -33,7 +33,7 @@
                     &#9776;
                 </button>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-toggleable-xs" collapse="navCollapsed">
                     <a class="navbar-brand" href="/">
                         <img src="images/NASA.svg" alt="NASA"> Database
