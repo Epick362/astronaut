@@ -5,3 +5,18 @@
 .content {
     margin-top: 110px;
 }
+
+.navbar-brand img {
+    display: inline-block;
+    height: 40px;
+    margin: -5px 0;
+}
+
+.btn-xs {
+    padding: .15rem .5rem;
+    font-size: 0.8rem;
+}
+
+input[type=date].form-control {
+    line-height: 1.3;
+}

@@ -1,0 +1,24 @@
+<tr>
+    <td>
+        <input type="text" class="form-control form-control-sm" ng-model="ac.astronaut.fname" name="fname" placeholder="First name">
+    </td>
+    <td>
+        <input type="text" class="form-control form-control-sm" ng-model="ac.astronaut.lname" name="lname" placeholder="Last name">
+    </td>
+    <td>
+        <input
+            name="birth"
+            type="date"
+            class="form-control form-control-sm"
+            ng-model="ac.astronaut.birth"
+            placeholder="yyyy-MM-dd"
+            max="{{ac.today | date:'yyyy-MM-dd'}}"
+            min="{{ac.min | date:'yyyy-MM-dd'}}">
+    </td>
+    <td>
+        <input type="text" class="form-control form-control-sm" ng-model="ac.astronaut.power" name="power" placeholder="Superpower">
+    </td>
+    <td class="text-xs-right">
+        <button class="btn btn-success btn-sm" ng-click="ac.create()" type="submit" name="submit">Add</button>
+    </td>
+</tr>

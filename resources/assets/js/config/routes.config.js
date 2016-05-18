@@ -12,21 +12,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('index', {
         url: '/',
         parent: 'app',
-        templateUrl: 'views/index.html',
-        controller: 'IndexController',
-        controllerAs: 'vm'
-    })
-    .state('login', {
-        url: '/login',
-        templateUrl: 'views/login.html',
-        controller: 'AuthController',
-        controllerAs: 'vm'
-    })
-    .state('register', {
-        url: '/register',
-        templateUrl: 'views/register.html',
-        controller: 'AuthController',
-        controllerAs: 'vm'
+        template: '<astronaut-list></astronaut-list>'
     })
     .state('404', {
         url: '/404',

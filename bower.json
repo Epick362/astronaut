@@ -23,6 +23,7 @@
     "font-awesome": "~4.4.0",
     "lodash": "~3.10.1",
     "ng-messages": "*",
+    "ngstorage": "~0.3.10",
     "satellizer": "~0.11.2"
   },
   "resolutions": {

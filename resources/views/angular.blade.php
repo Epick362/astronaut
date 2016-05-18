@@ -1,6 +1,6 @@
 <!DOCTYPE html>
     <head>
-        <title>Bootstrap</title>
+        <title>NASA Astronaut Database</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -13,10 +13,12 @@
         <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
         <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
         <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
         <link rel="manifest" href="/manifest.json">
-        <meta name="msapplication-TileColor" content="#d6a941">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-TileImage" content="/mstile-144x144.png">
         <meta name="theme-color" content="#ffffff">
 
@@ -26,40 +28,17 @@
     </head>
     <body ng-app="app" ng-cloak>
         <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-            <button class="navbar-toggler hidden-sm-up" type="button" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-                &#9776;
-            </button>
+            <div class="container">
+                <button class="navbar-toggler hidden-sm-up" type="button" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                    &#9776;
+                </button>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-toggleable-xs" collapse="navCollapsed">
-                <a class="navbar-brand" href="/">
-                    Bootstrap
-                </a>
-
-                <ul class="nav navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="item">item</a></li>
-                </ul>
-
-                <ul class="nav navbar-nav pull-xs-right">
-                    <li class="nav-item" ng-if="authenticated">
-                        <a class="nav-link" ui-sref="index">
-                            <i class="fa fa-user"></i> @{{currentUser.name}}
-                        </a>
-                    </li>
-                    <li class="nav-item" ng-if="authenticated">
-                        <logout></logout>
-                    </li>
-                    <li class="nav-item" ng-if="!authenticated">
-                        <a class="nav-link" ui-sref="login">
-                            Log In
-                        </a>
-                    </li>
-                    <li class="nav-item" ng-if="!authenticated">
-                        <a class="nav-link" ui-sref="register">
-                            Sign Up
-                        </a>
-                    </li>
-                </ul>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-toggleable-xs" collapse="navCollapsed">
+                    <a class="navbar-brand" href="/">
+                        <img src="images/NASA.svg" alt="NASA"> Database
+                    </a>
+                </div>
             </div>
         </nav>
 
@@ -72,7 +51,7 @@
 
         @if (app('env') == 'local')
 <script id="__bs_script__">//<![CDATA[
-document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.12.3.js'><\/script>".replace("HOST", location.hostname));
+document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.12.8.js'><\/script>".replace("HOST", location.hostname));
 //]]></script>
         @endif
     </body>

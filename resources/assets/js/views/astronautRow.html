@@ -1,0 +1,9 @@
+<tr>
+    <td>{{ ar.astronaut.fname }}</td>
+    <td>{{ ar.astronaut.lname }}</td>
+    <td>{{ ar.astronaut.birth | date }}</td>
+    <td>{{ ar.astronaut.power }}</td>
+    <td class="text-xs-right">
+        <a class="btn btn-danger btn-xs" href="" ng-click="ar.delete()"><i class="fa fa-trash"></i></a>
+    </td>
+</tr>
