@@ -21,7 +21,6 @@ app.directive('astronautList', function() {
         vm.sort = function(attribute) {
             vm.sortType = attribute;
             vm.sortReverse = !vm.sortReverse;
-            console.log(vm.sortType);
         }
 
         $rootScope.$on('reloadAstronauts', function() {
