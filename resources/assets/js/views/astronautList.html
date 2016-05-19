@@ -3,6 +3,7 @@
     <p>
 The term "astronaut" derives from the Greek words meaning "space sailor," and refers to all who have been launched as crew members aboard NASA spacecraft bound for orbit and beyond.</p>
 
+    <div class="table-responsive">
     <table class="table table-striped table-hover">
         <thead class="thead-default">
             <tr>
@@ -50,6 +51,7 @@ The term "astronaut" derives from the Greek words meaning "space sailor," and re
             <tr astronaut-row ng-repeat="astronaut in al.astronauts | orderBy:al.sortType:al.sortReverse" data="astronaut"></tr>
         </tbody>
     </table>
+    </div>
 
     <div class="pull-xs-right text-muted">{{ al.astronauts.length }} records found</div>
 </div>
