@@ -1,5 +1,5 @@
 app.directive('astronautRow', function() {
-    var controller = ['AstronautService', function(AstronautService) {
+    var controller = ['$rootScope', 'AstronautService', function($rootScope, AstronautService) {
         var vm = this;
 
         vm.delete = function() {
@@ -7,6 +7,7 @@ app.directive('astronautRow', function() {
                 AstronautService.destroy(vm.astronaut.id)
                 .then(function (data) {
                     delete vm.astronaut;
+                    $rootScope.$broadcast('reloadAstronauts');
                 });
             }
         }

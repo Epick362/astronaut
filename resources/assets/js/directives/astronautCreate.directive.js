@@ -1,5 +1,5 @@
 app.directive('astronautCreate', function() {
-    var controller = ['AstronautService', 'toastr', function(AstronautService, toastr) {
+    var controller = ['$rootScope', 'AstronautService', 'toastr', function($rootScope, AstronautService, toastr) {
         var vm = this;
 
         vm.loading = false;
@@ -16,6 +16,8 @@ app.directive('astronautCreate', function() {
             .then(function(data) {
                 vm.loading = false;
                 toastr.success('Record added');
+                $rootScope.$broadcast('reloadAstronauts');
+                delete vm.astronaut;
             })
             .catch(function() {
                 toastr.error('API Error');
